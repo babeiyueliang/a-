@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>百度新闻首页</title>
+	<link rel='stylesheet' href='/stylesheets/style.css' />
+	<link rel="stylesheet" href="/stylesheets/swiper-3.4.2.min.css" />
+	
+
+</head>
+<body>
+	<div class="box">
+		<div class="header clearFix">
+			<div class="top-header clearFix">
+				<a href="javascript:;"><img src="/images/logo1.png" alt="" /></a>
+				<a href="javascript:;"><img src="/images/user.png" alt="" /></a>
+				<a href="javascript:;"><img src="/images/logo2.png" alt="" /></a>
+				<a href="javascript:;"><img src="/images/search.png" alt="" /></a>
+				<a href="javascript:;"><img src="/images/add.png" alt="" /></a>
+			</div>
+			<div class="nav-header">
+				<ul class="clearFix xx">
+					<li class="on"><a href="javascript:;">推荐</a></li>
+					<li><a href="javascript:;">百家</a></li>
+					<li><a href="javascript:;">本地</a></li>
+					<li><a href="javascript:;">图片</a></li>
+					<li><a href="javascript:;">娱乐</a></li>
+					<li><a href="javascript:;">社会</a></li>
+					<li><a href="javascript:;">军事</a></li>
+					<li><a href="javascript:;">互联网</a></li>
+					<li><a href="javascript:;">科技</a></li>
+					<li><a href="javascript:;">女人</a></li>
+					<li><a href="javascript:;">本地</a></li>
+					<li><a href="javascript:;">图片</a></li>
+					<li><a href="javascript:;">娱乐</a></li>
+					<li><a href="javascript:;">社会</a></li>
+					<li><a href="javascript:;">军事</a></li>
+					<li><a href="javascript:;">互联网</a></li>
+					<li><a href="javascript:;">科技</a></li>
+					<li><a href="javascript:;">女人</a></li>
+				</ul>
+			</div> 
+		</div>
+		<div class="swiper-container">
+		    <div class="swiper-wrapper">
+		        <div class="swiper-slide">
+		        	<img src="<%= datas[3].img%>">
+		        	<p><%= datas[3].title%></p>
+		        </div>
+		        <div class="swiper-slide">
+		        	<img src="<%= datas[2].img%>">
+		        	<p><%= datas[2].title%></p>
+		        </div>
+		        <div class="swiper-slide">
+		        <img src="<%= datas[4].img%>">
+		        	<p><%= datas[4].title%></p>
+		        </div>
+		    </div>
+	        <div class="swiper-pagination">
+	        	
+	        </div>
+	    </div> 
+	</div>
+	<div>
+				
+	</div>
+	<div class="div">
+		<div class="div1 show">
+			<%var subArray = classifys[0];%>
+			<%for(var i=0;i<subArray.length;i++){%>
+				<%var object = subArray[i];%>	
+				<div class="par">
+					<h5><%= object.title%></h5>
+					<h6><%= object.date%></h6>
+					<img src="<%= object.img%>" alt="" />
+				</div>
+			<%}%>
+		</div>
+		<div class="div1">
+			<%var subArray = classifys[1];%>
+			<%for(var i=0;i<subArray.length;i++){%>
+				<%var object = subArray[i];%>	
+				<div class="par">
+					<h5><%= object.title%></h5>
+					<h6><%= object.date%></h6>
+					<img src="<%= object.img%>" alt="" />
+				</div>
+			<%}%>
+		</div>
+		<div class="div1">
+			<%var subArray = classifys[2];%>
+			<%for(var i=0;i<subArray.length;i++){%>
+				<%var object = subArray[i];%>	
+				<div class="par">
+					<h5><%= object.title%></h5>
+					<h6><%= object.date%></h6>
+					<img src="<%= object.img%>" alt="" />
+				</div>
+			<%}%>
+		</div>
+		<div class="div1">
+			<%var subArray = classifys[3];%>
+			<%for(var i=0;i<subArray.length;i++){%>
+				<%var object = subArray[i];%>	
+				<div class="par">
+					<h5><%= object.title%></h5>
+					<h6><%= object.date%></h6>
+					<img src="<%= object.img%>" alt="" />
+				</div>
+			<%}%>
+		</div>
+		<div class="div1">
+			<%var subArray = classifys[4];%>
+			<%for(var i=0;i<subArray.length;i++){%>
+				<%var object = subArray[i];%>	
+				<div class="par">
+					<h5><%= object.title%></h5>
+					<h6><%= object.date%></h6>
+					<img src="<%= object.img%>" alt="" />
+				</div>
+			<%}%>
+		</div>
+	</div>
+	
+	
+	<script src="/javascripts/swiper-3.4.2.min.js"></script>
+	<script src="/javascripts/jquery.min.js"></script>
+	<script src="/javascripts/javascript.js"></script>
+
+</body>
+</html>

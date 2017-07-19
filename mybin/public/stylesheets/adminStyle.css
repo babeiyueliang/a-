@@ -1,0 +1,22 @@
+.clearFix:after{content:'';display: block;clear:both;}
+
+.ul .one .btn{
+	float: right;
+	width:50px;
+	height:30px;
+	font-size: 16px;
+}
+.ul .one .btn p{
+	margin: -6px -6px 9px;
+}
+.num{
+	width: 67px;
+}
+.imgc{
+	display: block;
+	width: 123px;
+	overflow: hidden;
+}
+.ul .one{
+	background-color: #d9edf7;
+}

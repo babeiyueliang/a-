@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>百度新闻</title>
+	<link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+	
+	<form>
+		<input type="text" id="name" placeholder="姓名">
+		<br>
+    	<input type="text" id="age" placeholder="年龄">
+    	<br>
+    	<input type="text" id="fav" placeholder="爱好">
+    	<br>
+    	<button id="btn">提交</button>
+		<button id="add">添加</button>
+		<ul>
+			<li>
+				<img id="img" src="" alt="" />
+				<h5 id="title"></h5>
+				<p id="content"></p>
+			</li>
+		</ul>	
+	</form>
+		<div class="news">
+		
+			<% for(var i=0;i<datas.length;i++){%> 
+				<div class="part">
+					<h5><%= datas[i].title%></h5>
+					<h6><%= datas[i].content%></h6>
+					<img src="<%= datas[i].img%>" alt="" />
+				</div>
+			<% }%>
+			
+		</div>
+	<script type="text/javascript" src='/javascripts/jquery.min.js'></script>
+	<script type="text/javascript">
+		$('#btn').click(function(e){
+			e.preventDefault();
+			var name=$('#name').val();
+			var age=$('#age').val();
+			var fav=$('fav').val();
+
+			var json={name:name,age:age,fav:fav};
+			$.ajax({
+				url:'/inserUser',
+				type:'post',
+				data:json,
+				success:function(data){
+					alert(data.message);
+					$('#name').val($('#name').placeholder);
+			 		$('#age').val($('#age').placeholder);
+			 		$('#fav').val($('#fav').placeholder);
+				},
+				error:function(err){
+					console.log(err);
+				}
+			})
+		});
+		
+	</script>
+</body>
+</html>

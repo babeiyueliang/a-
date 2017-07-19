@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>百度新闻后台管理</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/adminStyle.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css"href="/stylesheets/bootstrap-datetimepicker.min.css">
+</head>
+<body>
+	<div class="panel panel-default">
+	  	<div class="panel-heading">
+	  		<h3>百度新闻后台管理</h3>
+	  	</div>
+	  	<div class="panel-body">
+	    	<div class="row">
+			  	<div class="col-md-5">
+			  		<div class="panel panel-default">
+					  	<div class="panel-heading">
+					  		新闻发布
+					  	</div>
+					  	<div class="panel-body">
+					    	<form>
+					    		<div class="form-group">
+							    	<label for="exampleInputPassword1">栏目</label>
+							    	<select id="" class="column  form-control">
+							    		<option>推荐</option>
+							    		<option>百家</option>
+							    		<option>本地</option>
+							    		<option>图片</option>
+							    		<option>娱乐</option>
+							    		<option>社会</option>
+							    		<option>军事</option>
+							    		<option>互联网</option>
+							    		<option>科技</option>
+							    	</select>
+							 	</div>
+							  	<div class="form-group">
+							    	<label for="exampleInputEmail1">标题</label>
+							    	<input type="email" class="title form-control" id="exampleInputEmail1" placeholder="请输入标题">
+							  	</div>
+							  	<div class="form-group">
+							    	<label for="exampleInputPassword1">日期</label>
+							    	<input size="16" type="text" placeholder="时间" readonly class="form_datetime date">
+							    	
+							 	</div>
+								
+								<br />
+								<div class="input-group">
+								  	<span class="input-group-addon" id="basic-addon3">图片</span>
+								  	<input type="text" class="img form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="请输入图片地址">
+								</div>
+								<br />
+								<textarea class="content form-control" placeholder="请输入内容" rows="4"></textarea>
+								<br>
+								<button id="add" type="button" class="btn btn-success btn-primary btn-lg"  data-target="#myModal">
+								  添加
+								</button>
+
+							</form>
+					  	</div>
+					</div>
+			  	</div>
+			  	<div class="col-md-7">
+			  		<div class="panel panel-default">
+					  	<div class="panel-heading">
+					  		新闻列表
+					  	</div>
+					  	<div class="panel-body">
+							<table class="table table-hover">
+								<tr>
+								  <td class="active">id</td>
+								  <td class="success">标题</td>
+								  <td class="warning">img</td>
+								  <td class="danger">时间</td>
+								</tr>
+							</table>
+								<ul class="ul list-group">
+								<% for(var i=0;i<datas.length;i++){%>
+								  	<li class="clearFix one list-group-item list-group-item-danger">
+								  		<table class="table table-hover">
+											<tr>
+											  	<td class="num active"><%= datas[i].id%></td>
+											  	<td class="titlei success"><%= datas[i].title%></td>
+											  	<td class="imgi imgc warning"><%= datas[i].img%></td>
+											  	<td class="datei danger"><%= datas[i].date%></td>
+											</tr>
+										</table>
+								  		<button type="button" id="remove" class="btn btn-danger btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+									  		<p>删除</p>
+										</button>
+
+										<div class="modal fade" id="myModal" tabindex="1" role="dialog" aria-labelledby="myModalLabel1">
+										  	<div class="modal-dialog" role="document">
+											    <div class="modal-content">
+											      	<div class="modal-header">
+											        	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+											        	<h4 class="modal-title" id="myModalLabel">百度新闻</h4>
+											      	</div>
+											      	<div class="modal-body">
+											        	删除此条
+											      	</div>
+											      	<div class="modal-footer">
+											        	<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+											        	<button type="button" id="sure" class="btn btn-primary">确认</button>
+											      	</div>
+											    </div>
+										  	</div>
+										</div>
+										
+								  	</li>
+								<%}%>  						
+								</ul>
+							
+
+					  	</div>
+					</div>
+			  	</div>
+			</div>
+	 	 </div>
+
+	  	<table class="table">
+	    	
+	  	</table>
+	</div>
+	<script src="/javascripts/jquery.min.js"></script>
+	<script src="/javascripts/bootstrap.min.js"></script>
+	<script src="/javascripts/bootstrap-datetimepicker.min.js"></script>
+	<script src="/javascripts/admin.js"></script>
+</body>
+</html>
